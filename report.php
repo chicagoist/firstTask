@@ -88,8 +88,10 @@
 
 
         // Скрипт для на полнение строк в таблице customers
-        $query = "INSERT INTO customers (first_name, last_name, numberphone, email, data) "
-                . "VALUES ('" . $first_name . "', '" . $last_name . "', '" . $numberphone . "', '" . $email . "', '" . $data . "')";
+        $query = "INSERT INTO customers (first_name, last_name, numberphone, "
+                . "email, data) "
+                . "VALUES ('" . $first_name . "', '" . $last_name . "', "
+                . "'" . $numberphone . "', '" . $email . "', '" . $data . "')";
 
 
 
