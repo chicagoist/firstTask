@@ -80,7 +80,6 @@
           if (!$table_query) {
           print('Error querying database. НЕТ ТАБЛИЦЫ' . "<br />");
           } else {
-
           print("Таблица customers существует<br />");
           }
          * 
