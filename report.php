@@ -44,8 +44,8 @@
 
         // Данные длдя доступа к БД
         $hostname = "localhost";
-        $username = "legioner";
-        $password = "arafat";
+        $username = "пользователь_базы";
+        $password = "пароль к MySQL";
         $db = "testDB"; // уже созданная вручную в консоли БД
         
         // Вывод ошибок для дебага во время работы с БД
