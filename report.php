@@ -127,7 +127,6 @@
         while ($row = $result_text->fetch_assoc()) {
             // Оператором echo выводим на экран поля таблицы name_blog и text_blog
             echo '<b>id : </b>' . $row['id'] . ", ";
-            
             echo '<b>Имя : </b>' . $row['first_name'] . ", ";
             echo '<b>Фамилия : </b>' . $row['last_name'] . ", ";
             echo '<b>Номер телефона : </b>' . $row['numberphone'] . ", ";
