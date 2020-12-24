@@ -15,7 +15,7 @@
           3. Сайт stackoverflow.com
          * 
          */
-        
+
 
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
@@ -44,10 +44,9 @@
 
         // Данные длдя доступа к БД
         $hostname = "localhost";
-        $username = "пользователь_базы";
-        $password = "пароль к MySQL";
+        $username = "legioner";
+        $password = "arafat";
         $db = "testDB"; // уже созданная вручную в консоли БД
-        
         // Вывод ошибок для дебага во время работы с БД
         //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT */);
 
@@ -113,11 +112,10 @@
         echo 'Thanks for submitting the form.<br />';
         echo "<br />";
         /*
-         Отображение полей, созданной БД
+          Отображение полей, созданной БД
          */
         // Работа над ошибками во время дебага
         //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT */);
-        
         // Попробовал доступ к БД через классы (тяжелее далось)
         $conn = new mysqli($hostname, $username, $password, $db)
                 or die('Невозможно открыть базу');
@@ -128,6 +126,8 @@
         // В цикле перебираем все записи таблицы и выводим их
         while ($row = $result_text->fetch_assoc()) {
             // Оператором echo выводим на экран поля таблицы name_blog и text_blog
+            echo '<b>id : </b>' . $row['id'] . ", ";
+            
             echo '<b>Имя : </b>' . $row['first_name'] . ", ";
             echo '<b>Фамилия : </b>' . $row['last_name'] . ", ";
             echo '<b>Номер телефона : </b>' . $row['numberphone'] . ", ";
@@ -138,14 +138,12 @@
 
         // Закрытие доступа к БД
         mysqli_close($conn);
-        
+
         /*
-         mysqldump -u legioner -p testDB --events --triggers --routines > testDB.sql
+          mysqldump -u legioner -p testDB --events --triggers --routines > testDB.sql
          */
-        
-        
         ?>
 
- 
+
     </body>
 </html>
