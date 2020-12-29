@@ -21,8 +21,8 @@
          */
 
 
-        require_once("Includes/db.php");
-        require_once ("Includes/printdb.php");
+        require_once("Includes/TestDB.php");
+        require_once ("Includes/PrintDB.php");
 
 
         // Передача значений в переменные из Формы
@@ -51,8 +51,19 @@
         
         echo 'Thanks for submitting the form.<br />';
         echo "<br />";
+        ?>
+        
+                <form method="post" action="editrow.php">
+            <label for="editrow">Enter id: </label>
+            <input type="text" name="editrow" />
+
+            <input type="submit" value="SUBMIT" name="submit" /><br />
+        </form>
+        <br />
         
         
+        
+        <?php
         $printTable = PrintDB::getObject();
         
         ?>
