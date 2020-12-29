@@ -8,11 +8,12 @@
     <body>
         <h2>Создание MySQL</h2>
         <?php
+        
         /*
           Использовал для работы над скриптом:
           1. Книга "Head First PHP", Michael Morrison
           2. Книга "PHP 7", Симдянов
-          3. Сайт stackoverflow.com
+          3. Сайт stackoverflow.com 
          * 
          */
         error_reporting(E_ALL);
