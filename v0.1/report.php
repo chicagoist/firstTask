@@ -51,7 +51,7 @@
         echo "<br />";
         ?>
 
-        <form method="post" action="v0.1/editrow.php">
+        <form method="post" action="editrow.php">
             <label for="editrow">Enter id: </label>
             <input type="text" name="editrow" />
 
