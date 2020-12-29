@@ -8,10 +8,6 @@
     <body>
         <h2>Создание MySQL</h2>
         <?php
-        error_reporting(E_ALL);
-        ini_set('display_errors', 1);
-
-
         /*
           Использовал для работы над скриптом:
           1. Книга "Head First PHP", Michael Morrison
@@ -19,7 +15,8 @@
           3. Сайт stackoverflow.com
          * 
          */
-
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
 
         require_once("Includes/TestDB.php");
         require_once ("Includes/PrintDB.php");
@@ -53,7 +50,7 @@
         echo "<br />";
         ?>
 
-        <form method="post" action="editrow.php">
+        <form method="post" action="v0.1/editrow.php">
             <label for="editrow">Enter id: </label>
             <input type="text" name="editrow" />
 
