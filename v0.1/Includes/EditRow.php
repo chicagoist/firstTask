@@ -37,15 +37,12 @@ class EditRow extends mysqli {
                     . mysqli_connect_error());
         }
         parent::set_charset('utf-8');
-
     }
-    
-        public function print_row($id_row) {
-        
-       $param = $this->query("SELECT id, first_name, last_name, numberphone, email, data FROM customers WHERE id=" . $id_row);
-        
-        //echo '$param = ' . $param . "\n";
-        
+
+    public function print_row($id_row) {
+
+        $param = $this->query("SELECT id, first_name, last_name, numberphone, email, data FROM customers WHERE id=" . $id_row);
+
         while ($row = $param->fetch_assoc()) {
             // Оператором echo выводим на экран поля таблицы name_blog и text_blog
             echo '<b>id : </b>' . $row['id'] . " ";

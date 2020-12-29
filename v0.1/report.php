@@ -47,25 +47,22 @@
         }
 
 
-        $dbconnect = TestDB::getInstance()->create_customer($first_name, $last_name, $numberphone, $email, $data);
-        
+        TestDB::getInstance()->create_customer($first_name, $last_name, $numberphone, $email, $data);
+
         echo 'Thanks for submitting the form.<br />';
         echo "<br />";
         ?>
-        
-                <form method="post" action="editrow.php">
+
+        <form method="post" action="editrow.php">
             <label for="editrow">Enter id: </label>
             <input type="text" name="editrow" />
 
             <input type="submit" value="SUBMIT" name="submit" /><br />
         </form>
-        <br />
-        
-        
-        
+        <br /> 
+
         <?php
-        $printTable = PrintDB::getObject();
-        
+        PrintDB::getObject();
         ?>
 
 
