@@ -7,7 +7,7 @@ class TestDB extends mysqli {
     // 
     private $user = "user";
     private $pass = "pass";
-    private $dbName = "database";
+    private $dbName = "DB";
     private $dbHost = "localhost";
 
 // Этот метод должен быть static и должен возвращать экземпляр объекта, если объект

@@ -1,3 +1,7 @@
+<?php
+$row_id = htmlspecialchars($_GET['editrow']);
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -10,14 +14,24 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+
         <?php
-        //require_once("Includes/db.php");
-        //require_once ("Includes/printdb.php");
-        require_once ("Includes/EditRow.php");
+        if ($_GET) {
+            echo <<<'ENDOF'
+        <form method="post" action="deleterow.php">
+            <input type="text" name="deleterow" />
+            <input type="submit" value="id УДАЛИТЬ" name='submit' />
+        </form>
+        <br />
+        ENDOF;
 
-        $row_id = htmlspecialchars($_POST['editrow']);
+            require_once ("Includes/EditRow.php");
 
-        EditRow::getObject()->print_row($row_id);
+            EditRow::getObject()->print_row($row_id);
+        } else {
+            header('Location: report.html');
+        }
         ?>
+
     </body>
 </html>

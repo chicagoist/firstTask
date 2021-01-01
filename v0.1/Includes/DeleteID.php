@@ -1,6 +1,6 @@
 <?php
 
-class PrintDB extends mysqli {
+class DeleteID extends mysqli {
 
     // single instance of self shared among all instances
     private static $object = null;
@@ -20,7 +20,7 @@ class PrintDB extends mysqli {
     }
 
     // Методы clone и wakeup предотвращают внешнее создание копий класса Singleton,
-// таким образом исключая возможность дублирования объектов.
+    // таким образом исключая возможность дублирования объектов.
     public function __clone() {
         trigger_error('Clone is not allowed.', E_USER_ERROR);
     }
@@ -37,20 +37,22 @@ class PrintDB extends mysqli {
                     . mysqli_connect_error());
         }
         parent::set_charset('utf-8');
+    }
 
-// Формируем запрос из таблицы с именем customers
-        $sql = "SELECT * FROM customers";
-        $result_text = $this->query($sql);
-        // В цикле перебираем все записи таблицы и выводим их
-        while ($row = $result_text->fetch_assoc()) {
-            // Оператором echo выводим на экран поля таблицы name_blog и text_blog
-            echo '<b>id : </b>' . $row['id'] . " ";
-            echo '<b>Имя : </b>' . $row['first_name'] . ", ";
-            echo '<b>Фамилия : </b>' . $row['last_name'] . ", ";
-            echo '<b>Телефон : </b>' . $row['numberphone'] . ", ";
-            echo '<b>E-mail : </b>' . $row['email'] . ", ";
-            echo '<b>Дата : </b>' . $row['data'];
-            echo "<br />";
+    public function delete_row_by_id($delete_id) {
+
+        $this->query("DELETE FROM customers WHERE id=" . $delete_id);
+        EditRow::getObject()->print_row($delete_id);
+
+        $check_id = $this->query("SELECT id FROM customers WHERE id=" . $delete_id);
+
+
+        if ($check_id) {
+            echo "Check TABLE in DB by this id:" . $delete_id . "<br />";
+            echo "SUCSSES ! NO MORE IN DATABASE id: " . $delete_id . "<br />";
+            echo "<pre>";
+            print_r($check_id);
+            echo "</pre>";
         }
     }
 

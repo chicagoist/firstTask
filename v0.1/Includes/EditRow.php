@@ -7,7 +7,7 @@ class EditRow extends mysqli {
     // db connection config vars
     private $user = "user";
     private $pass = "pass";
-    private $dbName = "database";
+    private $dbName = "DB";
     private $dbHost = "localhost";
 
     // Этот метод должен быть static и должен возвращать экземпляр объекта, если объект
@@ -20,7 +20,7 @@ class EditRow extends mysqli {
     }
 
     // Методы clone и wakeup предотвращают внешнее создание копий класса Singleton,
-// таким образом исключая возможность дублирования объектов.
+    // таким образом исключая возможность дублирования объектов.
     public function __clone() {
         trigger_error('Clone is not allowed.', E_USER_ERROR);
     }
@@ -48,9 +48,9 @@ class EditRow extends mysqli {
             echo '<b>id : </b>' . $row['id'] . " ";
             echo '<b>Имя : </b>' . $row['first_name'] . ", ";
             echo '<b>Фамилия : </b>' . $row['last_name'] . ", ";
-            echo '<b>Номер телефона : </b>' . $row['numberphone'] . ", ";
+            echo '<b>Телефона : </b>' . $row['numberphone'] . ", ";
             echo '<b>E-mail : </b>' . $row['email'] . ", ";
-            echo '<b>Дата посещения : </b>' . $row['data'];
+            echo '<b>Дата : </b>' . $row['data'];
             echo "<br />";
             exit;
         }
