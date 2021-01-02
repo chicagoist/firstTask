@@ -5,9 +5,9 @@ class RefactRow extends mysqli {
     // один экземпляр разделен между всеми экземплярами класса
     private static $object = null;
     // переменные для доступа к БД
-    private $user = "legioner";
-    private $pass = "arafat";
-    private $dbName = "testDB";
+    private $user = "user";
+    private $pass = "pass";
+    private $dbName = "DB";
     private $dbHost = "localhost";
 
     // Этот метод должен быть static и должен возвращать экземпляр объекта, если объект

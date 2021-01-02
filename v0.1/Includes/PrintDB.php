@@ -2,9 +2,9 @@
 
 class PrintDB extends mysqli {
 
-    // single instance of self shared among all instances
+    // один экземпляр разделен между всеми экземплярами класса
     private static $object = null;
-    // db connection config vars
+    // переменные для доступа к БД
     private $user = "user";
     private $pass = "pass";
     private $dbName = "DB";

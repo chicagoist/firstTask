@@ -2,9 +2,9 @@
 
 class EditRow extends mysqli {
 
-    // single instance of self shared among all instances
+    // один экземпляр разделен между всеми экземплярами класса
     private static $object = null;
-    // db connection config vars
+    // переменные для доступа к БД
     private $user = "user";
     private $pass = "pass";
     private $dbName = "DB";
@@ -39,6 +39,7 @@ class EditRow extends mysqli {
         parent::set_charset('utf-8');
     }
 
+    //функция вывода данных строки по id
     public function print_row($id_row) {
 
         $param = $this->query("SELECT id, first_name, last_name, numberphone, email, data FROM customers WHERE id=" . $id_row);

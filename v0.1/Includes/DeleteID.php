@@ -2,9 +2,9 @@
 
 class DeleteID extends mysqli {
 
-    // single instance of self shared among all instances
+    // один экземпляр разделен между всеми экземплярами класса
     private static $object = null;
-    // db connection config vars
+    // переменные для доступа к БД
     private $user = "user";
     private $pass = "pass";
     private $dbName = "DB";
@@ -39,9 +39,12 @@ class DeleteID extends mysqli {
         parent::set_charset('utf-8');
     }
 
+    // удаление строки по id
     public function delete_row_by_id($delete_id) {
 
         $this->query("DELETE FROM customers WHERE id=" . $delete_id);
+
+        // проверка удаления строки по id
         EditRow::getObject()->print_row($delete_id);
 
         $check_id = $this->query("SELECT id FROM customers WHERE id=" . $delete_id);

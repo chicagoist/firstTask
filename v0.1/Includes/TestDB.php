@@ -2,9 +2,9 @@
 
 class TestDB extends mysqli {
 
-    // single instance of self shared among all instances
+    // один экземпляр разделен между всеми экземплярами класса
     private static $instance = null;
-    // 
+    // переменные для доступа к БД
     private $user = "user";
     private $pass = "pass";
     private $dbName = "DB";
@@ -38,6 +38,7 @@ class TestDB extends mysqli {
         }
         parent::set_charset('utf-8');
 
+        //команда создания таблицы
         $create_table = "CREATE TABLE customers ( id INT(11) NOT NULL "
                 . "AUTO_INCREMENT PRIMARY KEY, "
                 . "first_name TINYTEXT, "
@@ -47,10 +48,12 @@ class TestDB extends mysqli {
                 . "data VARCHAR(20) )";
 
 
+        //если в БД не существует данной таблицы, то создание её, если есть уже, то - игнорирование
         $this->query($create_table);
     }
 
-    public function get_customer_id_by_first_name($arg) { //для извлечения идентификатора пользователя на основе имени
+    //для извлечения идентификатора пользователя на основе имени
+    public function get_customer_id_by_first_name($arg) { 
         $name = $this->real_escape_string($arg);
 
         $customer = $this->query("SELECT id FROM customers WHERE first_name = '"
@@ -62,11 +65,14 @@ class TestDB extends mysqli {
             return null;
     }
 
-    public function get_row_by_id($id_row) { // для извлечения строки, 
-//принадлежащей определенному пользователю с соответствующим идентификатором
+    // для извлечения строки,
+    //принадлежащей определенному пользователю с соответствующим идентификатором
+    public function get_row_by_id($id_row) {  
+
         return $this->query("SELECT first_name, last_name, numberphone, email, data FROM customers WHERE id=" . $id_row);
     }
 
+    //создание новой строки в таблице customers
     public function create_customer($first_name, $last_name, $numberphone, $email, $data) {
         $first_name = $this->real_escape_string($first_name);
         $last_name = $this->real_escape_string($last_name);
