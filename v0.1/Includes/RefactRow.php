@@ -104,7 +104,7 @@ class RefactRow extends mysqli {
 
 
 
-        $this->query("UPDATE customers SET first_name='" . $first_name . "', last_name='" . $last_name . "', numberphone='" . $numberphone . "', email='" . $email . "', data='" . $data . "'  WHERE id='" . $id . "'");
+        $this->query("UPDATE IGNORE customers SET first_name='" . $first_name . "', last_name='" . $last_name . "', numberphone='" . $numberphone . "', email='" . $email . "', data='" . $data . "'  WHERE id='" . $id . "'");
 
         // вывод строки с обновленными данными
         echo "<b>Новые данные:</b><br />";
