@@ -8,19 +8,13 @@
     <body>
         <h2>Создание MySQL</h2>
         <?php
-        /*
-          Использовал для работы над скриптом:
-          1. Книга "Head First PHP", Michael Morrison
-          2. Книга "PHP 7", Симдянов
-          3. Сайт stackoverflow.com
-         * 
-         */
+ 
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
         require_once("Includes/TestDB.php");
         require_once ("Includes/PrintDB.php");
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { // зашли ли из формы со страницы нашего сайта через POST
 
 
 
@@ -51,8 +45,8 @@
             echo 'Thanks for submitting the form.<br />';
             echo "<br />";
         } else {
-            header('Location: report.html');
-        }
+            header('Location: report.html'); // если зашли не со страницы нашего сайта, то переадресация на Главную
+        }        
         ?>
 
         <form method="get" action="editrow.php">
