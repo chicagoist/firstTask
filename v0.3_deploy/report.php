@@ -11,8 +11,8 @@
         <h2>Создание MySQL</h2>
         <?php
 
-        use App\Database\TestDB;
-        use App\Show\PrintDB;
+use App\Database\TestDB;
+use App\Show\PrintDB;
 
 error_reporting(E_ALL);
 
@@ -66,6 +66,7 @@ error_reporting(E_ALL);
 
 <?php
 PrintDB::getObject();
+mysqli_close(PrintDB::getObject());
 ?>
 
 
