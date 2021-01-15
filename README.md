@@ -1,4 +1,4 @@
-# firstTask ( Refactoring the report.php File )
+# firstTask
 
           Использовал для работы над скриптом:
           1. Книга "Head First PHP", Michael Morrison
