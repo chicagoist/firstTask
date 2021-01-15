@@ -7,7 +7,8 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <h2>Создание таблицы БД MySQL, если её нет</h2>
+    <h2>Создание таблицы БД MySQL, если её нет.</h2>
+    <h3>Тестовое задание.</h3>
 
     <p>Insert Public Data:</p>
     <form method="post" action="report.php">
